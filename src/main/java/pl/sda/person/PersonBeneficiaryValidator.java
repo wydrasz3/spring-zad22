@@ -6,7 +6,11 @@ import org.springframework.stereotype.Component;
 public class PersonBeneficiaryValidator extends AbstractPersonValidator {
 
     public boolean validate(Beneficiary person) {
-        return false;
+        boolean isFirstNameValid = validateName(person.getFirstName(), 3, 100);
+        boolean isLastNameValid = validateName(person.getLastName(), 0, 150);
+        boolean isShareValid = validateRange(person.getShare(), 1, 100);
+        return isFirstNameValid && isLastNameValid && isShareValid;
+
     }
 
 }
