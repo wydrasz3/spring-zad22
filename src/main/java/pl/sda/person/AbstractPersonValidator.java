@@ -7,7 +7,7 @@ abstract class AbstractPersonValidator {
     }
 
     boolean isContainsVowelAndNotSpecial(String name) {
-        return name.matches(".*[AEIOUaeiou].*") && !name.matches("[^a-zA-Z0-9 ]");
+        return name.matches(".*[AEIOaeio].*") && !name.matches("[^a-zA-Z0-9 ]");
     }
 
     boolean validateRange(int value, int min, int max) {
